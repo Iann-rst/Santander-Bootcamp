@@ -43,3 +43,21 @@
 - BMW;
 - Alibaba;
 - etc;
+
+### Ambiente de Desenvolvimento
+
+> https://flutter.dev
+
+- Instalação Windows;
+- Android Studio;
+- Visual Studio Code;
+- Instalação Linux;
+- Instalação Mac;
+
+### Criando primeiro projeto em Flutter
+
+> Criando projeto em Flutter
+
+- flutter create;
+- flutter create -t app --org com.companyname.packagename -a kotlin -i swift myapp;
+- flutter create -t app --org com.iannrst.dioapp -a kotlin -i swift dioproject;
