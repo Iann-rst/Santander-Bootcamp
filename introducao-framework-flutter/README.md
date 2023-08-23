@@ -61,3 +61,12 @@
 - flutter create;
 - flutter create -t app --org com.companyname.packagename -a kotlin -i swift myapp;
 - flutter create -t app --org com.iannrst.dioapp -a kotlin -i swift dioproject;
+
+## Desafios
+
+- **1º Desafio**: Subindo o Seu Projeto Flutter no GitHub:
+  - Instalar Flutter;
+  - Configurar ambiente;
+  - Criar um projeto;
+  - Alterar textos e cores;
+  - Subir o projeto para o GitHub;
