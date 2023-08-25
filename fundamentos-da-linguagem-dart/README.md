@@ -33,3 +33,15 @@ dart create -t console meu_app
 # Executar o projeto
 dart run
 ```
+
+## Tipos de dados
+
+- int;
+- double;
+- String;
+- bool;
+- List e List<>;
+- Map - chave/valor;
+- constant - const;
+- Dynamic;
+- Date;
