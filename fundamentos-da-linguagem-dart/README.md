@@ -45,3 +45,13 @@ dart run
 - constant - const;
 - Dynamic;
 - Date;
+
+## Dominando Funções em Dart
+
+**Benefícios das funções**
+
+- Reduzindo a duplicação de código;
+- Melhorar a clareza do código;
+- Reutilização de código;
+- Decompondo problemas complexos em partes mais simples;
+- Ocultação de informações;
