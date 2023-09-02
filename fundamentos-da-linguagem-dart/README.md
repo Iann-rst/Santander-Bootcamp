@@ -55,3 +55,29 @@ dart run
 - Reutilização de código;
 - Decompondo problemas complexos em partes mais simples;
 - Ocultação de informações;
+
+## Orientação a Objetos em Dart
+
+**O que é OO?**
+
+- A Orientação a Objetos é um paradigma de computação que nos auxilia a efetuar abstrações de objetos e outras coisas imateriais do mundo real. Essas abstrações serão escritas em forma de estruturas de fácil compreensão, estruturas essas que servirão de modelo para criação de nossos dados dentro dos sistemas.
+
+**Princípios da OO**
+
+- Abstração;
+- Encapsulamento;
+- Herança;
+- Polimorfismo;
+
+**Detalhamento da OO**
+
+- Classes;
+- Herança;
+- Objetos;
+- Encapsulamento;
+- Polimorfismo;
+- Classes Abstratas;
+- Interfaces;
+- Inversão de Controle e Injeção de dependência;
+- SOLID;
+- DDD- Domain Driven Design;
