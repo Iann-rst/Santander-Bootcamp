@@ -81,3 +81,24 @@ dart run
 - Inversão de Controle e Injeção de dependência;
 - SOLID;
 - DDD- Domain Driven Design;
+
+## Boas Práticas e Tratamento de Exceções em Dart
+
+**Tratamento de Erros**
+
+- Try-catch;
+- Try-catch-finally;
+
+```dart
+try{
+  // Caso seja sucesso
+}on ExceçãoEspecifica catch(e){
+  // Trata Exceção específica
+}catch(e){
+  // Trata qualquer outra exceção
+}finally{
+  // Executa mesmo sendo sucesso ou erro
+}
+```
+
+**Boas práticas e Lint**
