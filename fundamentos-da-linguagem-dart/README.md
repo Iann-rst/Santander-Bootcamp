@@ -102,3 +102,22 @@ try{
 ```
 
 **Boas práticas e Lint**
+
+## Introdução à Testes em Dart
+
+- Evitar erros antes de ir para produção;
+- Redução de custos com testes manuais;
+- Confiabilidade do código;
+
+**Testes no DART**
+
+- dart run test;
+- Utilização de Matchers:
+
+  ```dart
+    test('Calcula o valor do produto com desconto sem porcentagem', (){
+      expect(app.calcularDesconto(1000, 150, false), equals(850));
+    });
+  ```
+
+- Confiabilidade do código;
