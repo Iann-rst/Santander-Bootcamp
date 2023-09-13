@@ -9,4 +9,11 @@ void main() {
   test('Calcula o desconto do produto com porcentagem', () {
     expect(app.calcularDesconto(1000, 20, true), 800);
   });
+
+  test(
+      'Calcula o desconto do produto sem porcentagem passando valor do produto como zero',
+      () {
+    expect(() => app.calcularDesconto(0, 150, false),
+        throwsA(TypeMatcher<ArgumentError>()));
+  });
 }
