@@ -121,3 +121,16 @@ try{
   ```
 
 - Confiabilidade do código;
+
+## Criando uma Calculadora de IMC com Flutter
+
+- Neste desafio você irá criar uma calculadora simples para calcular o IMC (Índice de Massa Corporal) de uma pessoa utilizando a linguagem Dart e o Flutter;
+
+### Checklist do Desafio
+
+- Criar classe Pessoa (Nome / Peso / Altura);
+- Ler dados do terminal;
+- Tratar exceções;
+- Calcular IMC;
+- Mostrar na tela o resultado do cálculo;
+- Testes;
