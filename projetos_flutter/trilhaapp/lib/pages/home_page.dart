@@ -40,6 +40,32 @@ class _HomePageState extends State<HomePage> {
               "Foi clicado $quantidadeDeCliques vezes",
               style: GoogleFonts.acme(fontSize: 24),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  color: Colors.red,
+                  child: Text(
+                    "10",
+                    style: GoogleFonts.acme(fontSize: 24),
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Text(
+                    "20",
+                    style: GoogleFonts.acme(fontSize: 24),
+                  ),
+                ),
+                Container(
+                  color: Colors.green,
+                  child: Text(
+                    "30",
+                    style: GoogleFonts.acme(fontSize: 24),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
