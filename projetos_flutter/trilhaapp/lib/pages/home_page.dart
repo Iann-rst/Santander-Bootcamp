@@ -28,40 +28,59 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              "Ações do usuário",
-              style: GoogleFonts.acme(fontSize: 20),
+            Container(
+              color: Colors.blue,
+              child: Text(
+                "Ações do usuário",
+                style: GoogleFonts.acme(fontSize: 20),
+              ),
             ),
-            Text(
-              "O número gerado foi: $number",
-              style: GoogleFonts.acme(fontSize: 24),
+            Container(
+              color: Colors.amber,
+              child: Text(
+                "O número gerado foi: $number",
+                style: GoogleFonts.acme(fontSize: 24),
+              ),
             ),
-            Text(
-              "Foi clicado $quantidadeDeCliques vezes",
-              style: GoogleFonts.acme(fontSize: 24),
+            Expanded(
+              child: Container(
+                color: Colors.indigo,
+                child: Text(
+                  "Foi clicado $quantidadeDeCliques vezes",
+                  style: GoogleFonts.acme(fontSize: 24),
+                ),
+              ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  color: Colors.red,
-                  child: Text(
-                    "10",
-                    style: GoogleFonts.acme(fontSize: 24),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.red,
+                    child: Text(
+                      "Nome",
+                      style: GoogleFonts.acme(fontSize: 24),
+                    ),
                   ),
                 ),
-                Container(
-                  color: Colors.blue,
-                  child: Text(
-                    "20",
-                    style: GoogleFonts.acme(fontSize: 24),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: Colors.blue,
+                    child: Text(
+                      "Iann Rodrigues",
+                      style: GoogleFonts.acme(fontSize: 24),
+                    ),
                   ),
                 ),
-                Container(
-                  color: Colors.green,
-                  child: Text(
-                    "30",
-                    style: GoogleFonts.acme(fontSize: 24),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.green,
+                    child: Text(
+                      "30",
+                      style: GoogleFonts.acme(fontSize: 24),
+                    ),
                   ),
                 ),
               ],
