@@ -11,12 +11,12 @@
 - [x] Apresentando o Widget Row;
 - [x] Apresentando o Expanded;
 - [x] Fixando Tamanho nos Componentes;
-- [ ] Simulando com Blocos uma tela de Login;
+- [x] Simulando com Blocos uma tela de Login;
 
 ## Etapa 2: Navegação e Controle de Acesso a Páginas em Flutter
 
-- [ ] Páginas, Navegação e Tela de Login;
-- [ ] Iniciando a Tela de Login;
+- [x] Páginas, Navegação e Tela de Login;
+- [x] Iniciando a Tela de Login;
 - [ ] Conhecendo o TextButton;
 - [ ] Conhecendo o TextField;
 - [ ] Trabalhando com Teclado;
