@@ -1,4 +1,7 @@
 import 'package:diologin/pages/dados_cadastrais.dart';
+import 'package:diologin/pages/page1.dart';
+import 'package:diologin/pages/page2.dart';
+import 'package:diologin/pages/page3.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -75,6 +78,13 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+        ),
+        body: PageView(
+          children: const [
+            Page1(),
+            Page2(),
+            Page3(),
+          ],
         ),
       ),
     );
