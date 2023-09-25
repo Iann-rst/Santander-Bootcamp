@@ -8,11 +8,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String password = "";
+  String email = "";
+  bool isObscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         body: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
@@ -65,9 +69,12 @@ class _LoginPageState extends State<LoginPage> {
                   margin: const EdgeInsets.symmetric(horizontal: 30),
                   height: 30,
                   alignment: Alignment.center,
-                  child: const TextField(
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (value) {
+                      email = value;
+                    },
+                    decoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(top: 0),
                       hintText: "Email",
                       hintStyle: TextStyle(color: Colors.white),
@@ -96,26 +103,39 @@ class _LoginPageState extends State<LoginPage> {
                   margin: const EdgeInsets.symmetric(horizontal: 30),
                   height: 30,
                   alignment: Alignment.center,
-                  child: const TextField(
-                    style: TextStyle(color: Colors.white),
+                  child: TextField(
+                    obscureText: isObscureText,
+                    onChanged: (value) {
+                      password = value;
+                    },
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(top: 0),
+                      contentPadding: const EdgeInsets.only(top: 0),
                       hintText: "Senha",
-                      hintStyle: TextStyle(color: Colors.white),
-                      prefixIcon: Icon(
+                      hintStyle: const TextStyle(color: Colors.white),
+                      prefixIcon: const Icon(
                         Icons.lock_outline,
                         color: Color.fromARGB(255, 110, 46, 194),
                       ),
-                      suffixIcon: Icon(
-                        Icons.visibility,
-                        color: Color.fromARGB(255, 110, 46, 194),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            isObscureText = !isObscureText;
+                          });
+                        },
+                        child: Icon(
+                          isObscureText
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: const Color.fromARGB(255, 110, 46, 194),
+                        ),
                       ),
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Color.fromARGB(255, 110, 46, 194),
                         ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
+                      focusedBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Color.fromARGB(255, 110, 46, 194),
                         ),
@@ -133,7 +153,10 @@ class _LoginPageState extends State<LoginPage> {
                   child: SizedBox(
                     width: double.infinity,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print(email);
+                        print(password);
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
