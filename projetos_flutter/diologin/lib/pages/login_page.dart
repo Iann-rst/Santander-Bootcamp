@@ -1,3 +1,4 @@
+import 'package:diologin/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -154,9 +155,11 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (emailController.text.trim() == "email@email.com" &&
                             passwordController.text.trim() == "123") {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Login realizado com sucesso!"),
+                          // realiza a navegação para a tela home
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
                             ),
                           );
                         } else {
