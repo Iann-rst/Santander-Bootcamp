@@ -8,8 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String password = "";
-  String email = "";
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   bool isObscureText = true;
 
   @override
@@ -70,10 +70,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                   alignment: Alignment.center,
                   child: TextField(
+                    controller: emailController,
+                    onChanged: (value) {},
                     style: const TextStyle(color: Colors.white),
-                    onChanged: (value) {
-                      email = value;
-                    },
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(top: 0),
                       hintText: "Email",
@@ -104,10 +103,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                   alignment: Alignment.center,
                   child: TextField(
+                    controller: passwordController,
                     obscureText: isObscureText,
-                    onChanged: (value) {
-                      password = value;
-                    },
+                    onChanged: (value) {},
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(top: 0),
@@ -154,8 +152,8 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     child: TextButton(
                       onPressed: () {
-                        print(email);
-                        print(password);
+                        print(emailController.text);
+                        print(passwordController.text);
                       },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
