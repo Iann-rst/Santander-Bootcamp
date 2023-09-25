@@ -1,3 +1,4 @@
+import 'package:diologin/pages/dados_cadastrais.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,7 +29,18 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     child: const Text("Dados cadastrais"),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const InfoPage(
+                          title: "Meus dados",
+                          dados: ["Nome", "Endereço"],
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 const Divider(),
                 const SizedBox(
