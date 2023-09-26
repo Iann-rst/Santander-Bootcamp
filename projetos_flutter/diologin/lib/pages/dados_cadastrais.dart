@@ -12,12 +12,14 @@ class InfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(dados.length.toString()),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: Center(
+          child: Text(dados.length.toString()),
+        ),
       ),
     );
   }
