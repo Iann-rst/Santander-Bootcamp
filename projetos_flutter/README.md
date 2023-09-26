@@ -17,15 +17,25 @@
 
 - [x] Páginas, Navegação e Tela de Login;
 - [x] Iniciando a Tela de Login;
-- [ ] Conhecendo o TextButton;
-- [ ] Conhecendo o TextField;
-- [ ] Trabalhando com Teclado;
-- [ ] Obtendo o valor da TextFiled;
-- [ ] TextField escondendo a senha;
-- [ ] Conhecendo o TextEditingController;
-- [ ] Simulando o Login;
-- [ ] Navegando para a HomePage;
-- [ ] Conhecendo o Drawer;
-- [ ] Criando tela de dados cadastrais;
-- [ ] Conhecendo o PageView;
-- [ ] Conhecendo o BottomNavigationBar;
+- [x] Conhecendo o TextButton;
+- [x] Conhecendo o TextField;
+- [x] Trabalhando com Teclado;
+- [x] Obtendo o valor da TextFiled;
+- [x] TextField escondendo a senha;
+- [x] Conhecendo o TextEditingController;
+- [x] Simulando o Login;
+- [x] Navegando para a HomePage;
+- [x] Conhecendo o Drawer;
+- [x] Criando tela de dados cadastrais;
+- [x] Conhecendo o PageView;
+- [x] Conhecendo o BottomNavigationBar;
+
+## Etapa 3: Interação com o usuário
+
+- [ ] Conhecendo TextField e TextButton;
+- [ ] Conhecendo DatePicker;
+- [ ] Conhecendo RadioList e Repository;
+- [ ] Conhecendo CheckBox e Repository;
+- [ ] Conhecendo Slider;
+- [ ] Conhecendo DropDownButton;
+- [ ] Validando os campos;
