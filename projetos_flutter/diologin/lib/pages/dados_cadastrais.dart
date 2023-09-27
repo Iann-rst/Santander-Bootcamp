@@ -1,3 +1,4 @@
+import 'package:diologin/repositories/linguagens_repository.dart';
 import 'package:diologin/repositories/nivel_repository.dart';
 import 'package:diologin/shared/widgets/text_label.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,14 @@ class _InfoPageState extends State<InfoPage> {
   var niveis = [];
   var nivelSelecionado = "";
 
+  LinguagensRepository linguagensRepository = LinguagensRepository();
+  var linguagens = [];
+  var linguagensSelecionada = [];
+
   @override
   void initState() {
     niveis = nivelRepository.retornaNiveis();
+    linguagens = linguagensRepository.retornaLinguagens();
     super.initState();
   }
 
@@ -35,8 +41,7 @@ class _InfoPageState extends State<InfoPage> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               const TextLabel(texto: "Nome"),
               TextField(
@@ -82,6 +87,26 @@ class _InfoPageState extends State<InfoPage> {
                             setState(() {
                               nivelSelecionado = value.toString();
                             });
+                          }),
+                    )
+                    .toList(),
+              ),
+              const TextLabel(
+                texto: "Linguagens preferidas",
+              ),
+              Column(
+                children: linguagens
+                    .map(
+                      (linguagem) => CheckboxListTile(
+                          title: Text(linguagem),
+                          value: linguagensSelecionada.contains(linguagem),
+                          onChanged: (value) {
+                            if (value!) {
+                              linguagensSelecionada.add(linguagem);
+                            } else {
+                              linguagensSelecionada.remove(linguagem);
+                            }
+                            setState(() {});
                           }),
                     )
                     .toList(),
