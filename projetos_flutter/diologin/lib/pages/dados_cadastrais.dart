@@ -172,7 +172,7 @@ class _InfoPageState extends State<InfoPage> {
                   print(nivelSelecionado);
                   print(linguagensSelecionada);
                   print(tempoDeExperiencia);
-                  print(salarioEscolhido);
+                  print(salarioEscolhido.round());
                 },
                 child: const Text("Salvar"),
               )
