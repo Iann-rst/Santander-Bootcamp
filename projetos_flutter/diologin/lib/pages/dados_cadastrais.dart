@@ -25,6 +25,8 @@ class _InfoPageState extends State<InfoPage> {
   var linguagens = [];
   var linguagensSelecionada = [];
 
+  double salarioEscolhido = 0;
+
   @override
   void initState() {
     niveis = nivelRepository.retornaNiveis();
@@ -110,6 +112,19 @@ class _InfoPageState extends State<InfoPage> {
                           }),
                     )
                     .toList(),
+              ),
+              TextLabel(
+                  texto:
+                      "Pretensão Salarial. R\$ ${salarioEscolhido.round().toString()}"),
+              Slider(
+                min: 0,
+                max: 10000,
+                value: salarioEscolhido,
+                onChanged: (value) {
+                  setState(() {
+                    salarioEscolhido = value;
+                  });
+                },
               ),
               TextButton(
                 onPressed: () {
