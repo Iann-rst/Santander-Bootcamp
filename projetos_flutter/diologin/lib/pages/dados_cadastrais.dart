@@ -27,6 +27,8 @@ class _InfoPageState extends State<InfoPage> {
 
   double salarioEscolhido = 0;
 
+  int tempoDeExperiencia = 1;
+
   @override
   void initState() {
     niveis = nivelRepository.retornaNiveis();
@@ -93,6 +95,9 @@ class _InfoPageState extends State<InfoPage> {
                     )
                     .toList(),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               const TextLabel(
                 texto: "Linguagens preferidas",
               ),
@@ -113,6 +118,40 @@ class _InfoPageState extends State<InfoPage> {
                     )
                     .toList(),
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              const TextLabel(
+                texto: "Tempo de experiência",
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              DropdownButton(
+                  value: tempoDeExperiencia,
+                  isExpanded: true,
+                  items: const [
+                    DropdownMenuItem(
+                      value: 1,
+                      child: Text("1 ano"),
+                    ),
+                    DropdownMenuItem(
+                      value: 2,
+                      child: Text("2 anos"),
+                    ),
+                    DropdownMenuItem(
+                      value: 3,
+                      child: Text("+3 anos"),
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      tempoDeExperiencia = int.parse(value.toString());
+                    });
+                  }),
+              const SizedBox(
+                height: 10,
+              ),
               TextLabel(
                   texto:
                       "Pretensão Salarial. R\$ ${salarioEscolhido.round().toString()}"),
@@ -130,6 +169,10 @@ class _InfoPageState extends State<InfoPage> {
                 onPressed: () {
                   print(nomeController.text);
                   print(dataNascimento);
+                  print(nivelSelecionado);
+                  print(linguagensSelecionada);
+                  print(tempoDeExperiencia);
+                  print(salarioEscolhido);
                 },
                 child: const Text("Salvar"),
               )
