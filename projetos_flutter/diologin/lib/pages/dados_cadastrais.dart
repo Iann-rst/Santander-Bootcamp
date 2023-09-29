@@ -13,7 +13,7 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  TextEditingController nomeController = TextEditingController(text: "nome");
+  TextEditingController nomeController = TextEditingController(text: "");
   TextEditingController dataNascimentoController = TextEditingController();
   DateTime? dataNascimento;
 
@@ -28,6 +28,8 @@ class _InfoPageState extends State<InfoPage> {
   double salarioEscolhido = 0;
 
   int tempoDeExperiencia = 1;
+
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -45,139 +47,159 @@ class _InfoPageState extends State<InfoPage> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: ListView(
-            children: [
-              const TextLabel(texto: "Nome"),
-              TextField(
-                controller: nomeController,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const TextLabel(texto: "Data de nascimento"),
-              TextField(
-                controller: dataNascimentoController,
-                readOnly: true,
-                onTap: () async {
-                  var data = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime(1950, 1, 1),
-                      firstDate: DateTime(1950, 1, 1),
-                      lastDate: DateTime(2023, 12, 31));
-                  if (data != null) {
-                    dataNascimentoController.text = data.toString();
-                    dataNascimento = data;
-                  }
-                },
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const TextLabel(
-                texto: "Nível de experiência",
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Column(
-                children: niveis
-                    .map(
-                      (nivel) => RadioListTile(
-                          title: Text(nivel.toString()),
-                          selected: nivelSelecionado == nivel,
-                          value: nivel.toString(),
-                          groupValue: nivelSelecionado,
-                          onChanged: (value) {
-                            setState(() {
-                              nivelSelecionado = value.toString();
-                            });
-                          }),
+          child: isLoading
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : ListView(
+                  children: [
+                    const TextLabel(texto: "Nome"),
+                    TextField(
+                      controller: nomeController,
+                      decoration: const InputDecoration(
+                        hintText: "Seu nome",
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const TextLabel(texto: "Data de nascimento"),
+                    TextField(
+                      controller: dataNascimentoController,
+                      readOnly: true,
+                      onTap: () async {
+                        var data = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime(1950, 1, 1),
+                            firstDate: DateTime(1950, 1, 1),
+                            lastDate: DateTime(2023, 12, 31));
+                        if (data != null) {
+                          dataNascimentoController.text = data.toString();
+                          dataNascimento = data;
+                        }
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const TextLabel(
+                      texto: "Nível de experiência",
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      children: niveis
+                          .map(
+                            (nivel) => RadioListTile(
+                                title: Text(nivel.toString()),
+                                selected: nivelSelecionado == nivel,
+                                value: nivel.toString(),
+                                groupValue: nivelSelecionado,
+                                onChanged: (value) {
+                                  setState(() {
+                                    nivelSelecionado = value.toString();
+                                  });
+                                }),
+                          )
+                          .toList(),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const TextLabel(
+                      texto: "Linguagens preferidas",
+                    ),
+                    Column(
+                      children: linguagens
+                          .map(
+                            (linguagem) => CheckboxListTile(
+                                title: Text(linguagem),
+                                value:
+                                    linguagensSelecionada.contains(linguagem),
+                                onChanged: (value) {
+                                  if (value!) {
+                                    linguagensSelecionada.add(linguagem);
+                                  } else {
+                                    linguagensSelecionada.remove(linguagem);
+                                  }
+                                  setState(() {});
+                                }),
+                          )
+                          .toList(),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const TextLabel(
+                      texto: "Tempo de experiência",
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    DropdownButton(
+                        value: tempoDeExperiencia,
+                        isExpanded: true,
+                        items: const [
+                          DropdownMenuItem(
+                            value: 1,
+                            child: Text("1 ano"),
+                          ),
+                          DropdownMenuItem(
+                            value: 2,
+                            child: Text("2 anos"),
+                          ),
+                          DropdownMenuItem(
+                            value: 3,
+                            child: Text("+3 anos"),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            tempoDeExperiencia = int.parse(value.toString());
+                          });
+                        }),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextLabel(
+                        texto:
+                            "Pretensão Salarial. R\$ ${salarioEscolhido.round().toString()}"),
+                    Slider(
+                      min: 0,
+                      max: 10000,
+                      value: salarioEscolhido,
+                      onChanged: (value) {
+                        setState(() {
+                          salarioEscolhido = value;
+                        });
+                      },
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          isLoading = true;
+                        });
+
+                        print(nomeController.text);
+                        print(dataNascimento);
+                        print(nivelSelecionado);
+                        print(linguagensSelecionada);
+                        print(tempoDeExperiencia);
+                        print(salarioEscolhido.round());
+
+                        Future.delayed(const Duration(seconds: 3), () {
+                          setState(() {
+                            isLoading = false;
+                          });
+                        });
+
+                        print(isLoading);
+                      },
+                      child: const Text("Salvar"),
                     )
-                    .toList(),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const TextLabel(
-                texto: "Linguagens preferidas",
-              ),
-              Column(
-                children: linguagens
-                    .map(
-                      (linguagem) => CheckboxListTile(
-                          title: Text(linguagem),
-                          value: linguagensSelecionada.contains(linguagem),
-                          onChanged: (value) {
-                            if (value!) {
-                              linguagensSelecionada.add(linguagem);
-                            } else {
-                              linguagensSelecionada.remove(linguagem);
-                            }
-                            setState(() {});
-                          }),
-                    )
-                    .toList(),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const TextLabel(
-                texto: "Tempo de experiência",
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              DropdownButton(
-                  value: tempoDeExperiencia,
-                  isExpanded: true,
-                  items: const [
-                    DropdownMenuItem(
-                      value: 1,
-                      child: Text("1 ano"),
-                    ),
-                    DropdownMenuItem(
-                      value: 2,
-                      child: Text("2 anos"),
-                    ),
-                    DropdownMenuItem(
-                      value: 3,
-                      child: Text("+3 anos"),
-                    ),
                   ],
-                  onChanged: (value) {
-                    setState(() {
-                      tempoDeExperiencia = int.parse(value.toString());
-                    });
-                  }),
-              const SizedBox(
-                height: 10,
-              ),
-              TextLabel(
-                  texto:
-                      "Pretensão Salarial. R\$ ${salarioEscolhido.round().toString()}"),
-              Slider(
-                min: 0,
-                max: 10000,
-                value: salarioEscolhido,
-                onChanged: (value) {
-                  setState(() {
-                    salarioEscolhido = value;
-                  });
-                },
-              ),
-              TextButton(
-                onPressed: () {
-                  print(nomeController.text);
-                  print(dataNascimento);
-                  print(nivelSelecionado);
-                  print(linguagensSelecionada);
-                  print(tempoDeExperiencia);
-                  print(salarioEscolhido.round());
-                },
-                child: const Text("Salvar"),
-              )
-            ],
-          ),
+                ),
         ),
       ),
     );
