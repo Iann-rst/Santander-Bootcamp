@@ -39,3 +39,20 @@
 - [x] Conhecendo Slider;
 - [x] Conhecendo DropDownButton;
 - [x] Validando os campos;
+
+## Etapa 4: Criando Visualizações de Dados em Flutter
+
+- [ ] UserAccountsDrawerHeader;
+- [ ] showModalBottomSheet;
+- [ ] showAlertDialog;
+- [ ] Card;
+- [ ] Hero;
+- [ ] LinearProgressIndicator;
+- [ ] Assets;
+- [ ] List Vertical;
+- [ ] List Horizontal;
+- [ ] Lista de tarefas - Criando model e repository;
+- [ ] Lista de tarefas - Adicionando a page e floatButton;
+- [ ] Lista de tarefas - Criando a ListView;
+- [ ] Lista de tarefas - Removendo itens;
+- [ ] Lista de tarefas - Alterando get e set no model;
