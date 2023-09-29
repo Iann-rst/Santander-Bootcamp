@@ -32,10 +32,10 @@
 
 ## Etapa 3: Interação com o usuário
 
-- [ ] Conhecendo TextField e TextButton;
-- [ ] Conhecendo DatePicker;
-- [ ] Conhecendo RadioList e Repository;
-- [ ] Conhecendo CheckBox e Repository;
-- [ ] Conhecendo Slider;
-- [ ] Conhecendo DropDownButton;
-- [ ] Validando os campos;
+- [x] Conhecendo TextField e TextButton;
+- [x] Conhecendo DatePicker;
+- [x] Conhecendo RadioList e Repository;
+- [x] Conhecendo CheckBox e Repository;
+- [x] Conhecendo Slider;
+- [x] Conhecendo DropDownButton;
+- [x] Validando os campos;
