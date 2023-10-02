@@ -1,4 +1,4 @@
-import 'package:diologin/pages/page1.dart';
+import 'package:diologin/pages/card_page.dart';
 import 'package:diologin/pages/page2.dart';
 import 'package:diologin/pages/page3.dart';
 import 'package:diologin/shared/widgets/custom_drawer.dart';
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 children: const [
-                  Page1(),
+                  CardPage(),
                   Page2(),
                   Page3(),
                 ],
