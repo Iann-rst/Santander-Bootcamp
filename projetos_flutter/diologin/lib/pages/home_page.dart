@@ -1,6 +1,6 @@
 import 'package:diologin/pages/card_page.dart';
 import 'package:diologin/pages/image_assets.dart';
-import 'package:diologin/pages/page3.dart';
+import 'package:diologin/pages/list_view.dart';
 import 'package:diologin/shared/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                 children: const [
                   CardPage(),
                   ImageAssetsPage(),
-                  Page3(),
+                  ListViewPage(),
                 ],
               ),
             ),
