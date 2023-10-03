@@ -28,11 +28,10 @@ class CardDetailsPage extends StatelessWidget {
                   height: 20,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.network(
                       cardDetails.url,
-                      height: 100,
+                      height: 90,
                     ),
                   ],
                 ),
