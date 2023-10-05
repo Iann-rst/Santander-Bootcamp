@@ -2,6 +2,7 @@ import 'package:diologin/pages/card_page.dart';
 import 'package:diologin/pages/image_assets.dart';
 import 'package:diologin/pages/list_view.dart';
 import 'package:diologin/pages/list_view_horizontal.dart';
+import 'package:diologin/pages/task_page.dart';
 import 'package:diologin/shared/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,8 @@ class _HomePageState extends State<HomePage> {
                   CardPage(),
                   ImageAssetsPage(),
                   ListViewPage(),
-                  ListViewHorizontal()
+                  ListViewHorizontal(),
+                  TaskPage(),
                 ],
               ),
             ),
@@ -64,6 +66,10 @@ class _HomePageState extends State<HomePage> {
                 BottomNavigationBarItem(
                   label: "Page4",
                   icon: Icon(Icons.list),
+                ),
+                BottomNavigationBarItem(
+                  label: "Tasks",
+                  icon: Icon(Icons.task),
                 ),
               ],
             )
