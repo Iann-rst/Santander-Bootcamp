@@ -56,3 +56,16 @@
 - [x] Lista de tarefas - Criando a ListView;
 - [x] Lista de tarefas - Removendo itens;
 - [x] Lista de tarefas - Alterando get e set no model;
+
+## Etapa 5: Persistindo dados locais em APPs Flutter
+
+> **Objetivo Geral**: Conhecer formas de gravar dados na memória do dispositivo. Será abordado formas de gravar de forma chave e valor fazendo uso do "shared_preferences". Passando para utilização do Hive que proporciona além de gravar chave valor, podermos gravar objetos complexos. Finalizando, passaremos pelo SQLite que é a gravação de dados fazendo uso de linguagem SQL.
+
+- Armazenamento de dados com shared_preferences;
+- Armazenamento de dados com banco de dados Hive;
+- Armazenamento de dados com banco de dados SQLite;
+
+### Shared Preferences
+
+- O recurso SharedPreferences é usado para armazenar dados no formato chave-valor.
+- Suporte: Android, iOS, Linux, macOS, Windows e Web;
