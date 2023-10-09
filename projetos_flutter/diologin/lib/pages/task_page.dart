@@ -10,8 +10,20 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  var _tasks = const <Task>[];
   TaskRepository taskRepository = TaskRepository();
   TextEditingController taskController = TextEditingController(text: '');
+
+  void getTasks() async {
+    _tasks = await taskRepository.list();
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getTasks();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +47,10 @@ class _TaskPageState extends State<TaskPage> {
                       child: const Text("Cancelar"),
                     ),
                     TextButton(
-                      onPressed: () {
-                        taskRepository.add(Task(taskController.text, false));
+                      onPressed: () async {
+                        await taskRepository
+                            .add(Task(taskController.text, false));
+                        setState(() {});
                         Navigator.pop(context);
                       },
                       child: const Text("Sim"),
@@ -47,7 +61,31 @@ class _TaskPageState extends State<TaskPage> {
         },
         child: const Icon(Icons.add),
       ),
-      body: Container(),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: ListView.builder(
+            itemCount: _tasks.length,
+            itemBuilder: (BuildContext bc, int index) {
+              var task = _tasks[index];
+              return Dismissible(
+                onDismissed: (direction) async {
+                  await taskRepository.remove(task.getId());
+                  getTasks();
+                },
+                key: Key(task.getId()),
+                child: ListTile(
+                  title: Text(task.getDescription()),
+                  trailing: Switch(
+                    onChanged: (value) async {
+                      await taskRepository.alterar(task.getId(), value);
+                      getTasks();
+                    },
+                    value: task.getCompleted(),
+                  ),
+                ),
+              );
+            }),
+      ),
     );
   }
 }
