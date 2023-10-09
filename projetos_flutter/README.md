@@ -42,17 +42,17 @@
 
 ## Etapa 4: Criando Visualizações de Dados em Flutter
 
-- [ ] UserAccountsDrawerHeader;
-- [ ] showModalBottomSheet;
-- [ ] showAlertDialog;
-- [ ] Card;
-- [ ] Hero;
-- [ ] LinearProgressIndicator;
-- [ ] Assets;
-- [ ] List Vertical;
-- [ ] List Horizontal;
-- [ ] Lista de tarefas - Criando model e repository;
-- [ ] Lista de tarefas - Adicionando a page e floatButton;
-- [ ] Lista de tarefas - Criando a ListView;
-- [ ] Lista de tarefas - Removendo itens;
-- [ ] Lista de tarefas - Alterando get e set no model;
+- [x] UserAccountsDrawerHeader;
+- [x] showModalBottomSheet;
+- [x] showAlertDialog;
+- [x] Card;
+- [x] Hero;
+- [x] LinearProgressIndicator;
+- [x] Assets;
+- [x] List Vertical;
+- [x] List Horizontal;
+- [x] Lista de tarefas - Criando model e repository;
+- [x] Lista de tarefas - Adicionando a page e floatButton;
+- [x] Lista de tarefas - Criando a ListView;
+- [x] Lista de tarefas - Removendo itens;
+- [x] Lista de tarefas - Alterando get e set no model;
