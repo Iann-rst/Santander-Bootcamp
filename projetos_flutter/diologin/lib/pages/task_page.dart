@@ -63,28 +63,32 @@ class _TaskPageState extends State<TaskPage> {
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: ListView.builder(
-            itemCount: _tasks.length,
-            itemBuilder: (BuildContext bc, int index) {
-              var task = _tasks[index];
-              return Dismissible(
-                onDismissed: (direction) async {
-                  await taskRepository.remove(task.getId());
-                  getTasks();
-                },
-                key: Key(task.getId()),
-                child: ListTile(
-                  title: Text(task.getDescription()),
-                  trailing: Switch(
-                    onChanged: (value) async {
-                      await taskRepository.alterar(task.getId(), value);
+        child: _tasks.isEmpty
+            ? const Center(
+                child: Text("Adicione suas tarefas"),
+              )
+            : ListView.builder(
+                itemCount: _tasks.length,
+                itemBuilder: (BuildContext bc, int index) {
+                  var task = _tasks[index];
+                  return Dismissible(
+                    onDismissed: (direction) async {
+                      await taskRepository.remove(task.id);
                       getTasks();
                     },
-                    value: task.getCompleted(),
-                  ),
-                ),
-              );
-            }),
+                    key: Key(task.id),
+                    child: ListTile(
+                      title: Text(task.description),
+                      trailing: Switch(
+                        onChanged: (value) async {
+                          await taskRepository.alterar(task.id, value);
+                          getTasks();
+                        },
+                        value: task.completed,
+                      ),
+                    ),
+                  );
+                }),
       ),
     );
   }

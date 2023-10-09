@@ -8,17 +8,11 @@ class Task {
   // constructor
   Task(this._description, this._completed);
 
-  String getId() {
-    return _id;
-  }
+  String get id => _id;
 
-  String getDescription() {
-    return _description;
-  }
+  String get description => _description;
 
-  bool getCompleted() {
-    return _completed;
-  }
+  bool get completed => _completed;
 
   void setDescription(String description) {
     _description = description;

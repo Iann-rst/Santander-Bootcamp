@@ -10,10 +10,7 @@ class TaskRepository {
 
   Future<void> alterar(String id, bool completed) async {
     await Future.delayed(const Duration(milliseconds: 0));
-    _tasks
-        .where((element) => element.getId() == id)
-        .first
-        .setCompleted(completed);
+    _tasks.where((task) => task.id == id).first.setCompleted(completed);
   }
 
   Future<List<Task>> list() async {
@@ -23,6 +20,6 @@ class TaskRepository {
 
   Future<void> remove(String id) async {
     await Future.delayed(const Duration(microseconds: 100));
-    _tasks.remove(_tasks.where((task) => task.getId() == id).first);
+    _tasks.remove(_tasks.where((task) => task.id == id).first);
   }
 }
