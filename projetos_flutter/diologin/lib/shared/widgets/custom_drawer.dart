@@ -1,5 +1,6 @@
 import 'package:diologin/pages/dados_cadastrais.dart';
 import 'package:diologin/pages/login_page.dart';
+import 'package:diologin/pages/numeros_aleatorios_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -144,6 +145,30 @@ class CustomDrawer extends StatelessWidget {
                       ),
                     );
                   });
+            },
+          ),
+          const Divider(),
+          InkWell(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              width: double.infinity,
+              child: const Row(
+                children: [
+                  Icon(Icons.numbers),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text("Gerador de números")
+                ],
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext bc) =>
+                          const NumerosAleatoriosPage()));
             },
           ),
           const Divider(),
