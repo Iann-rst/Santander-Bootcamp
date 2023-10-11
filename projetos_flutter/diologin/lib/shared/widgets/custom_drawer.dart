@@ -1,6 +1,7 @@
 import 'package:diologin/pages/dados_cadastrais.dart';
 import 'package:diologin/pages/login_page.dart';
 import 'package:diologin/pages/numeros_aleatorios_page.dart';
+import 'package:diologin/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -95,7 +96,15 @@ class CustomDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext bc) => const SettingsPage(),
+                ),
+              );
+            },
           ),
           const Divider(),
           const SizedBox(
